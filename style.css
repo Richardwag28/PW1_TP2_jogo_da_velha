@@ -1,0 +1,214 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --tamanho-casa: 160px;
+    --tamanho-marca: calc(var(--tamanho-casa) * 0.6);
+    --cor-principal: rgb(80, 80, 80);
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.titulo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.pontuacao {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    color: var(--cor-principal);
+    margin-bottom: 30px;
+}
+
+.pontuacao p {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.tabuleiro {
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.casa {
+    width: var(--tamanho-casa);
+    height: var(--tamanho-casa);
+    border: 1px solid var(--cor-principal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.casa:nth-child(1),
+.casa:nth-child(2),
+.casa:nth-child(3) {
+    border-top: none;
+}
+
+.casa:nth-child(1),
+.casa:nth-child(4),
+.casa:nth-child(7) {
+    border-left: none;
+}
+
+.casa:nth-child(3),
+.casa:nth-child(6),
+.casa:nth-child(9) {
+    border-right: none;
+}
+
+.casa:nth-child(7),
+.casa:nth-child(8),
+.casa:nth-child(9) {
+    border-bottom: none;
+}
+
+.casa.x::before,
+.casa.x::after,
+.casa.circulo::before {
+    background-color: var(--cor-principal);
+}
+
+.tabuleiro.x .casa:not(.x):not(.circulo):hover::before,
+.tabuleiro.x .casa:not(.x):not(.circulo):hover::after,
+.tabuleiro.circulo .casa:not(.x):not(.circulo):hover::before {
+    background-color: lightgray;
+}
+
+.casa.x::before,
+.casa.x::after,
+.tabuleiro.x .casa:not(.x):not(.circulo):hover::before,
+.tabuleiro.x .casa:not(.x):not(.circulo):hover::after {
+    content: "";
+    position: absolute;
+    width: calc(var(--tamanho-marca) * 0.15);
+    height: var(--tamanho-marca);
+}
+
+.casa.x::before,
+.tabuleiro.x .casa:not(.x):not(.circulo):hover::before {
+    transform: rotate(45deg);
+}
+
+.casa.x::after,
+.tabuleiro.x .casa:not(.x):not(.circulo):hover::after {
+    transform: rotate(-45deg);
+}
+
+.casa.circulo::before,
+.casa.circulo::after,
+.tabuleiro.circulo .casa:not(.x):not(.circulo):hover::before,
+.tabuleiro.circulo .casa:not(.x):not(.circulo):hover::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.casa.circulo::before,
+.tabuleiro.circulo .casa:not(.x):not(.circulo):hover::before {
+    width: var(--tamanho-marca);
+    height: var(--tamanho-marca);
+}
+
+.casa.circulo::after,
+.tabuleiro.circulo .casa:not(.x):not(.circulo):hover::after {
+    width: calc(var(--tamanho-marca) * 0.7);
+    height: calc(var(--tamanho-marca) * 0.7);
+    background-color: white;
+}
+
+.casa.x,
+.casa.circulo {
+    cursor: not-allowed;
+}
+
+.mensagem-vitoria {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.849);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5rem;
+    flex-direction: column;
+}
+
+.mensagem-vitoria button {
+    background-color: rgb(244, 34, 34);
+    border: 1px solid var(--cor-principal);
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.mensagem-vitoria button:hover {
+    background-color: var(--cor-principal);
+    border-color: white;
+    color: white;
+}
+
+.mensagem-vitoria.show {
+    display: flex;
+}
+
+.botao-reiniciar {
+    font-size: 1.5rem;
+    background-color: red;
+    /* Cor inicial vermelha */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    display: block;
+    margin: 50px auto;
+    transition: background-color 0.3s;
+
+}
+
+.botao-reiniciar:hover {
+    background-color: darkred;
+}
+
+.botao-jogar-novamente {
+    font-size: 1.0rem;
+    background-color: red;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 600px;
+    transition: background-color 0.3s;
+}
+
+.botao-jogar-novamente:hover {
+    background-color: darkred;
+}

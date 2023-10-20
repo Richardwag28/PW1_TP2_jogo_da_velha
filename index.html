@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 class="titulo">Jogo da Velha</h1>
+
+    <div class="pontuacao">
+        <div class="pontuacao-x">
+            <h3>Pontuação de X</h3>
+            <p id="pontuacaoX">0</p>
+        </div>
+        <div class="pontuacao-o">
+            <h3>Pontuação de O</h3>
+            <p id="pontuacaoO">0</p>
+        </div>
+    </div>
+
+    <div class="tabuleiro" id="tabuleiro">
+        <div class="casa" data-casa=""></div>
+        <div class="casa" data-casa></div>
+        <div class="casa" data-casa></div>
+        <div class="casa" data-casa></div>
+        <div class="casa" data-casa></div>
+        <div class="casa" data-casa></div>
+        <div class="casa" data-casa></div>
+        <div class="casa" data-casa></div>
+        <div class="casa" data-casa></div>
+    </div>
+
+    <div class="mensagem-vitoria" id="mensagemVitoria">
+        <div data-mensagem-vitoria-text>X é o vencedor!</div>
+        <button id="botaoJogarNovamente" class="botao-jogar-novamente">Jogar Novamente</button>
+    </div>
+    <button id="botaoReiniciar" class="botao-reiniciar">Reiniciar</button>
+    <script src="main.js"></script>
+</body>
+
+</html>
