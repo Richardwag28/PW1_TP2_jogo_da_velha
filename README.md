@@ -24,8 +24,7 @@ O jogo segue uma lógica simples:
 4. A pontuação é atualizada de acordo com o resultado.
 5. O jogo pode ser reiniciado a qualquer momento.
 
-![Texto Alternativo](./imagem/imagem02.png)
-![Texto Alternativo](./imagem/imagem03.png)
+[Assista ao Vídeo](./video/video01.mov)
 
 ## Funções Importantes
 

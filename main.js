@@ -88,7 +88,7 @@ function verificarVitoria(classeAtual) {
 
 function finalizarJogo(empate) {
     if (empate) {
-        mensagemVitoriaTexto.textContent = "Empate!";
+        mensagemVitoriaTexto.textContent = "O jogo terminou sem vencedor!";
     } else {
         mensagemVitoriaTexto.textContent = `${turnoCirculo ? "O" : "X"} é o vencedor!`;
         if (turnoCirculo) {
